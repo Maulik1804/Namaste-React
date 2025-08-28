@@ -1,0 +1,60 @@
+1. What is Emmet?
+-> Emmet is a plugin/tools for text editors(like vsCode,Sublime etc) that allow you to write short abbreviations(short form) and expand them into full HTML & CSS code.
+   ex: div.container>ul>li 
+
+2. Difference between a Library and Framework? 
+-> - Library: Collection of pre-written code you can call when needed.
+              You are in control of the flow (you decide when and where to use the library).
+              Example: React, jQuery, Lodash
+
+  - Framework : Provides a skeleton / structure for your project.
+                Framework controls the flow; you fill in the missing parts.
+                Example: Angular, Django, Spring, vue, express, next
+
+3. What is CDN? Why do we use it?
+-> CDN (Content Delivery Network) = A group of distributed servers placed worldwide to deliver static assets (CSS, JS, images, fonts) faster to users.
+   - Why use it?
+     Faster loading (delivers from nearest server).
+     Reduces server load.
+     Increases availability (backup servers).
+     Browser caching works better with common CDNs.
+
+4. Why is React known as React?
+-> React was named “React” because it reacts to changes in data.
+   It uses a virtual DOM to efficiently update and re-render components only where changes happen → creating a reactive user interface.
+
+5. What is crossorigin in <script> tag?
+-> The crossorigin attribute specifies how browsers handle cross-origin requests for scripts.
+   Values: anonymous → No user credentials(authentication information) (cookies, HTTP auth).
+           use-credentials → Sends credentials like cookies.
+           Often used with CDN + Subresource Integrity (SRI) (integrity attribute) to check file authenticity.
+   Example:  <script src="https://cdn.com/react.js"
+                crossorigin="anonymous"
+                integrity="sha384-xyz">
+             </script>
+
+6. Difference between React and ReactDOM
+-> React → Core library for building UI components (defines how components work, state, lifecycle).
+   ReactDOM → Specifically deals with the DOM (Document Object Model).
+              Without ReactDOM, React itself doesn’t know how to render to the browser DOM (it could be native, mobile, etc.).
+
+7. Difference between react.development.js and react.production.js (via CDN)
+-> 1.react.development.js : Larger in size
+                            Includes warnings, error messages, extra checks → easier for debugging.
+                            Used in local development.
+   2.react.production.js :  Smaller, minified, optimized for speed.
+                            No extra warnings.
+                            Used when deploying to live websites.
+
+8. ● What is async and defer in <script>?
+-> Both are used to load external JavaScript files without blocking HTML parsing:
+   1.async - Script is downloaded in parallel with HTML parsing.
+             Executes immediately after download finishes (may interrupt HTML parsing).
+             Best for independent scripts (analytics, ads).
+
+   2.defer - Script is downloaded in parallel, but execution is deferred until after HTML parsing is complete.
+             Preserves script order.
+             Best for main JS logic.
+             Example: <script src="file.js" async></script>
+                      <script src="file.js" defer></script>
+
